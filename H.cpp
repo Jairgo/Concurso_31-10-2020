@@ -6,39 +6,43 @@ int main() {
     bool band = true; // inicia en impares
     
     cin >> t;
+    if(1<=t && t<=50){
+        for (int i = 0; i < t; i++){
+            cin>> n;
+            if(1<=n && n <=50){
+                int casa[n];
+                int j = 0; 
+                while (j < n){
+                    if(0<=x && x<=100){
+                        cin >> x;
+                        casa[j]=x;
+                        j++;
+                    }
+                }
+                for (int j = 0; j < n; j++){
+                    if(casa[j] != 0){
+                        sumaImp+=casa[j];
+                        j++;
+                    }
+                }
 
-    for (int i = 0; i < t; i++)
-    {
-        cin>> n;
-        int casa[n];
-        for (int j = 0; j < n; j++)
-        {
-            cin >> x;
-            casa[j]=x;
-        }
-        for (int j = 0; j < n; j++)
-        {
-            if(casa[j] != 0){
-                if(band){
-                    sumaImp +=casa[j];
-                    band = false;
-                }else{
-                    sumaPar += casa[j];
-                    band = true;
+                for (int j = 1; j < n; j++){
+                    if(casa[j] != 0){
+                        sumaPar+=casa[j];
+                        j++;
+                    }
+                }
+
+                if(sumaImp >= sumaPar ) cout << sumaImp<<'\n';
+                else cout << sumaPar<<'\n';
+                //cout << sumaImp <<'\n';
+                //cout << sumaPar;
+                sumaImp=0;
+                sumaPar=0;
+                band = true;
+                
                 }
             }
-        }
-
-
-        //if(sumaImp >= sumaPar ) cout << sumaImp<<'\n';
-        //else cout << sumaPar<<'\n';
-        cout << sumaImp <<'\n';
-        cout << sumaPar;
-        sumaImp=0;
-        sumaPar=0;
-        band = true;
-        
     }
-    
     return 0;
 }
